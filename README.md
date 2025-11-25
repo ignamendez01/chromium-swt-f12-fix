@@ -18,3 +18,24 @@ Agregando un listener de teclas que:
   + Si chromium.debug está en true
   + Y si chromium.devtools_shortcut NO está definido o está en true
 + Llama a extraApi.getBrowser().openDevTools()
+
+# Cómo lo probé
+
+Ejecuté todo desde Eclipse, usando:
++ Java 21
++ El producto: org.eclipse.swt.chromium.example.e4.rcp.product
++ Con las propiedades:
+  + Dchromium.debug
+  + Dchromium.devtools_shortcut=true|false
+
+Luego corrí la aplicación E4 y verifiqué:
++ Que F12 abre DevTools correctamente
++ Que solo funciona cuando las flags están activadas
++ Que no rompe otros shortcuts ni funcionalidades
+
+# Resultado
+
+El comportamiento esperado quedó implementado:
++ Presionar F12 abre DevTools
++ Solo si las flags de debug lo permiten
++ Mantenemos compatibilidad con la arquitectura actual
